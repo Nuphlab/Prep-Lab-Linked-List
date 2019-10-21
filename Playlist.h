@@ -1,6 +1,10 @@
 #pragma once
 #ifndef Playlist_h
 #define Playlist_h
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 class Playlist {
 
@@ -20,6 +24,7 @@ public:
 private:
    string uniqueID;
    string songName;
+   string artistName;
    int songLength;
    Playlist* nextNodePtr;
             
