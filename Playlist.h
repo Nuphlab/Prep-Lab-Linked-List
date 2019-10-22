@@ -7,11 +7,9 @@
 using namespace std;
 
 class Playlist {
-
-   Playlist();
-   Playlist(string uniqueID, string songName, string artistName, int songlength, Playlist* nextNodePtr);
-   
 public:
+   Playlist();
+   Playlist(string uniqueID, string songName, string artistName, int songlength);
    void InsertAfter();
    void SetNext();
    void GetID();

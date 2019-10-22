@@ -4,7 +4,8 @@
 
 using namespace std;
 
-void PrintMenu() {
+string PrintMenu(string userIn) {
+   cout << userIn << " PLAYLIST MENU" << endl;
    cout << "a - Add song" << endl;
    cout << "d - Remove song" << endl;
    cout << "c - Change position of song" << endl;
@@ -14,24 +15,50 @@ void PrintMenu() {
    cout << "q - Quit" << endl;
    cout << endl;
    cout << "Choose an option :" << endl;
+   
+   return "";
 }
 
 int main() {
    string userIn;
    char userOption = NULL;
+   string ID;
+   string nameSong;
+   string nameArtist;
+   int lengthSong;
+   Playlist* head = nullptr;
+   Playlist* temp = nullptr;
+   Playlist* tail = nullptr;
 
    cout << "Enter playlist's title:" << endl;
    cin >> userIn;
+   cin.ignore();
 
    while (userOption != 'q') {
 
       while (userOption != 'a' && userOption != 'd' && userOption != 'c' && userOption != 's' && userOption != 't' && userOption != 'o' && userOption != 'q') {
-         cout << userIn << " PLAYLIST MENU" << endl;
-         PrintMenu();
+         PrintMenu(userIn);
          cin >> userOption;
+         cin.ignore();
       }
       if (userOption == 'a') {
-         cout << "Finish this section" << endl;
+         cout << "ADD SONG" << endl;
+         cout << "Enter song's unique ID: " << endl;
+         getline(cin, ID);
+         cout << "Enter song's name:" << endl;
+         getline(cin, nameSong);
+         cout << "Enter artist's name:" << endl;
+         getline(cin, nameArtist);
+         cout << "Enter song's length (in seconds):" << endl;
+         cin >> lengthSong;
+         cin.ignore();
+         
+         tail = new Playlist(ID, nameSong, nameArtist, lengthSong);
+         tail->GetArtistName();
+
+
+
+
       }
       else if (userOption == 'd') {
          cout << "Finish this section" << endl;
